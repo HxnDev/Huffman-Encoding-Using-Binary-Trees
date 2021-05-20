@@ -124,38 +124,13 @@ Since the character encodings have different lengths, often the length of a Huff
 not come out to an exact multiple of 7 bits. Files are stored as sequences of character ( 7 bits), so in cases
 like this the remaining digits of the last bit are filled with 0s.
 
-Char# 1 2 3 4 5 6
-Char b e e p ‘ ’ b o o p ‘ ’ b e e r!
+![alt text](https://github.com/HxnDev/Huffman-Encoding-Using-Binary-Trees/blob/main/p7.png?raw=true)
 
-Binary **00 11 11 1 01 011 00 010 010 1 01 011 00 11 11 100 0 1001 00**
-
-character
-Number
-
-```
-Binary ASCII value / char
-```
-1 st **00 11 11 1** 62 / ‘ > ’
-2 nd **01 011 00** 44 / ‘ ’ ’
-3 rd **010 010 1** 37 / ‘ % ’
-4 th **01 011 00** 44 / ‘ ’ ’
-5 th **11 11 100** 124 / ‘ | ’
-6 th **0 10 01 00** 36 / ‘ $ ’
-
-Write these characters (>’%’|$) to encoded file.
 
 **Uncompressing the file:**
 
 Read the **character** from encoded.txt and convert in 7 bits binary and search original character from
 **Huffman tree** , write that character on to reconstructed.txt
-
-```
-101 => p
-101 => p 1000 => r
-```
-```
-2 extra bits to complete char (7 bits)
-```
 
 **What to do in the Assignment?**
 
