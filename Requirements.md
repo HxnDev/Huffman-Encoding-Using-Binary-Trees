@@ -52,51 +52,35 @@ Character Frequency
 After calculating the frequencies, we’ll create binary tree nodes for each character, and we’ll introduce
 them in the ordered queue with the frequency:
 
-```
-Frequencies
-```
+![alt text](https://github.com/HxnDev/Huffman-Encoding-Using-Binary-Trees/blob/main/p1.png?raw=true)
+
 We now get the first two elements from the queue and create a link between them by creating a new
 binary tree node to have them both as successors (initialize root node with ‘ ***** ’ (character) ), so that the
 characters are siblings and we add their frequencies. After that we add the new node we created with
 the sum of the frequencies of its successors as it’s frequency in the queue.
 
-###### 1 1 2 2 2 3 4
+![alt text](https://github.com/HxnDev/Huffman-Encoding-Using-Binary-Trees/blob/main/p2.png?raw=true)
 
 
 We repeat the same steps and we get the following:
 
-## *
+![alt text](https://github.com/HxnDev/Huffman-Encoding-Using-Binary-Trees/blob/main/p3.png?raw=true)
+![alt text](https://github.com/HxnDev/Huffman-Encoding-Using-Binary-Trees/blob/main/p4.png?raw=true)
 
-### *
-
-### *
-
-* (^) *
-
-### *
 
 
 Now after we link the last two elements, we’ll get the final tree:
 
-* (^) *
-* (^) *
-* (^) *
-* (^) *
+![alt text](https://github.com/HxnDev/Huffman-Encoding-Using-Binary-Trees/blob/main/p5.png?raw=true)
 
-### *
-
-### *
-
-### * *^
-
-* (^) *
-
-### *
 
 
 Now, to obtain the code for each symbol we just need to traverse the trees until we get to that leaf
 node (symbol (character)). Now we associate 0 (zero) to left edges and 1 (one) to right edges, after each
 step we take to the left we concatenate a 0 to the code or 1 if we go right.
+
+![alt text](https://github.com/HxnDev/Huffman-Encoding-Using-Binary-Trees/blob/main/p6.png?raw=true)
+
 
 To decode a string of bits we just need to traverse the tree for each bit, if the bit is 0 we take a left step
 and if the bit is 1 we take a right step until we hit a leaf (which is the symbol we are looking for). For
@@ -119,18 +103,6 @@ Character Code
 ‘p’ 101
 ‘e’ 11
 ```
-### *
-
-### *
-
-### *
-
-### *
-
-### *
-
-### *
-
 
 Original String: beep boop beer!
 
